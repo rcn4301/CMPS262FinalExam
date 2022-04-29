@@ -1,0 +1,282 @@
+/* Global stuff */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Header Section */
+  .head {
+    background-image: url('https://www.pointpark.edu/admissions/undergraduate/fulltimeundergraduate/admittedstudents/pointpark_bridgespittbsurgh_backgrounds.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    position: relative;
+    font-size: 4rem;
+  }
+  
+  #favoriteTab {
+    position: absolute;
+    left: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  
+  #favoriteTab:hover {
+    color: black;
+    border-radius: 15px;
+    background: white;
+    padding: 1rem 2rem;
+  }
+  /*Main section*/
+  
+  .main {
+    min-height: 90vh;
+    position: relative;
+  }
+  
+  .songDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+  }
+  
+  .songDisplay form {
+    transform: translateX(30px);
+  }
+  
+  .songDisplay input {
+    padding: 1rem 2rem;
+    margin: 2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+  }
+  
+  #valMessage {
+    color: red;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #songNameDisplay {
+    font-size: 2rem;
+    margin: 2rem;
+  }
+  
+  .btn {
+    background: rgb(13, 137, 65);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  .btn:hover {
+    background: rgb(11, 114, 248);
+    color: black;
+  }
+  
+  .songDisplay img {
+    border-radius: 200px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .animateImg {
+    animation: rotateImg 20s linear infinite;
+  }
+  
+  #pauseBtn {
+    margin: 2rem;
+  }
+  
+  #heartBtn {
+    background: none;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fa-heart {
+    font-size: 2rem;
+  }
+  
+  .lyrics {
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+  
+  .lyrics p {
+    width: 50%;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+    line-height: 40px;
+  }
+  
+  /* Favorites Section */
+  
+  .favorites {
+    min-height: 90vh;
+    max-height: 90vh;
+    width: 23%;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10vh;
+    transition: all ease 0.5s;
+    transform: translateX(-50rem);
+    opacity: 0;
+    border-bottom-right-radius: 15px;
+    overflow-y: scroll;
+  }
+  
+  .contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clear {
+    padding: 1rem 2rem;
+    width: 30%;
+    background:rgb(13, 137, 65);
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all ease 0.5s;
+  }
+  
+  .clear:hover {
+    background: rgb(11, 114, 248);
+    color: black;
+  }
+  
+  #closeFavs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(13, 137, 65);
+    padding: 1rem;
+    border: none;
+    border-bottom-left-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all ease 0.5s;
+  }
+  #closeFavs:hover {
+    background: rgb(11, 114, 248);
+    color: black;
+  }
+  
+  .favorites.slide {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+  
+  .favorites h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .favList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #fav {
+    box-shadow: 0px 0px 10px rgb(13, 137, 65);
+    padding: 2rem 5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    width: 50%;
+  }
+  
+  #fav:hover {
+    background: darkgray;
+  }
+  
+  /* animations */
+  
+  @keyframes rotateImg {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .favorites {
+      width: 50%;
+    }
+    #lyrics {
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .favorites {
+      width: 50%;
+    }
+    .songDisplay form {
+      transform: translateX(0px);
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    #favoriteTab {
+      font-size: 1rem;
+      top: 45px;
+      left: 10px;
+    }
+    .favorites {
+      width: 100%;
+      background: white;
+    }
+    #favoriteTab:hover {
+      color: black;
+      border-radius: 15px;
+      background: white;
+      padding: 1rem;
+    }
+    .songDisplay form {
+      transform: translateX(0px);
+    }
+  }
+  
